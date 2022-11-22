@@ -17,7 +17,7 @@ interface FlyBuyApiService {
 	suspend fun loginUser(@Body login : LoginRequest): Response<LoginResponse>
 
 	//Register user
-	@POST("/api/signup")
+	@POST("accounts/users/")
 	suspend fun registerUser(@Body user : UserRequest): Response<UserResponse>
 
 	@GET("/api/products")

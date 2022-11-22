@@ -49,7 +49,18 @@ class SignUpFragment : Fragment() {
 				signUpBinding.loginProgress.loadingProgress.visibility = View.VISIBLE
 				signUpBinding.registerButton.isEnabled = false
 
-				val userRequest = UserRequest(address = address, email = email, name = name, password = password)
+				/**
+				 * {
+
+				"firstName": "Martin",
+				"lastName": "Wainaina",
+				"email": "martin@gmail.com",
+				"phone": "0712345678",
+				"password": "123456789",
+				"username": "martin"
+				}
+				 */
+				val userRequest = UserRequest(firstName = "Martin", lastName = "Wainaina", email = "martin@gmail.com", phone = "0712345678", password="123456789", username="martin")
 
 				viewModel.registerUser(userRequest = userRequest)
 
@@ -68,7 +79,7 @@ class SignUpFragment : Fragment() {
 				}
 
 			} else {
-				Snackbar.make(signUpBinding.registerButton,"${result.error}", Snackbar.LENGTH_SHORT).show()
+				Snackbar.make(signUpBinding.registerButton,"Error: ${result.error}", Snackbar.LENGTH_SHORT).show()
 			}
 
 		}
