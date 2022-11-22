@@ -1,4 +1,4 @@
-package com.codelytical.flybuy.presentation.ui
+package com.example.flybuy.presentation.ui
 
 import android.os.Bundle
 import android.os.Handler
